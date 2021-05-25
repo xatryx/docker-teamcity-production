@@ -1,0 +1,11 @@
+# Production
+/buildserver_pgdata/
+/logs/
+
+# Environment Variables
+.env
+
+# Others
+*.swp
+.DS_Store
+*.pem
