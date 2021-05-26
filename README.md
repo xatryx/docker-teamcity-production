@@ -32,7 +32,7 @@ docker build -t teamcity-agent-custom-android .
 
 Finally, we can build our TeamCity-Server
 ```bash
-docker-compose build up -d
+docker-compose up -d
 ```
 
 When it's ready, you can access TeamCity at port `8111`.
