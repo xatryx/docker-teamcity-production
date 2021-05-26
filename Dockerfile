@@ -5,6 +5,8 @@ MAINTAINER Ronan Harris
 ENV GRADLE_HOME=/usr/bin/gradle
 ENV DEBIAN_FRONTEND=noninteractive
 
+USER root
+
 RUN apt-get update
 RUN apt-get install -y --allow-downgrades expect git mc gradle unzip wget curl libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5-dev lib32z1
 RUN apt-get clean
