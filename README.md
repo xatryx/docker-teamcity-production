@@ -14,6 +14,12 @@ First, clone this repo somewhere into your VM Instance
 git clone https://github.com/xatryx/docker-teamcity-production.git
 ```
 
+To make sure TeamCity has a complete control over the the subdirectories so that it can store logs etc, run this line of code below.
+
+```bash
+chown -R 1000:1000 docker-teamcity-production/
+```
+
 Then open `docker-teamcity-production` folder and create a `.env` file
 ```bash
 cd docker-teamcity-production
