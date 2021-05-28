@@ -17,10 +17,9 @@ ENV PATH ${PATH}:/opt/tools
 ENV LICENSE_SCRIPT_PATH /opt/tools/android-accept-licenses.sh
 
 RUN cd /opt
-RUN mkdir android-sdk-tools && cd android-sdk-tools
+RUN mkdir android-sdk-tools && chown -R 0:0 android-sdk-tools/  && cd android-sdk-tools
 RUN wget --output-document=latest.zip https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip && unzip latest.zip
 RUN wget --output-document=platform.zip https://dl.google.com/android/repository/platform-tools-latest-linux.zip && unzip platform.zip
-RUN chown -R 0:0
 
 ENV ANDROID_HOME /opt/android-sdk-tools/
 ENV PATH ${PATH}:${ANDROID_HOME}/cmdline-tools:${ANDROID_HOME}/cmdline-tools/bin:${ANDROID_HOME}/platform-tools
