@@ -16,10 +16,7 @@ ADD ./scripts/android-accept-licenses.sh /opt/tools/
 ENV PATH ${PATH}:/opt/tools
 ENV LICENSE_SCRIPT_PATH /opt/tools/android-accept-licenses.sh
 
-RUN cd /opt && wget --output-document=android-tools.zip \
-    https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip && \
-    unzip android-tools.zip -d android-sdk-linux && \
-    chown -R root.root android-sdk-linux
+RUN cd /opt && wget --output-document=latest.zip https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip && unzip latest.zip -d android-sdk-linux && chown -R root.root android-sdk-linux
 
 ENV ANDROID_HOME /opt/android-sdk-linux
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools
