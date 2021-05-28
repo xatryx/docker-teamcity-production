@@ -18,8 +18,8 @@ ENV LICENSE_SCRIPT_PATH /opt/tools/android-accept-licenses.sh
 
 RUN cd /opt && wget --output-document=latest.zip https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip && unzip latest.zip -d android-sdk-linux && chown -R root.root android-sdk-linux
 
-ENV ANDROID_HOME /opt/android-sdk-linux
-ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools
+ENV ANDROID_HOME /opt/android-sdk-linux/
+ENV PATH ${PATH}:${ANDROID_HOME}/cmdline-tools:${ANDROID_HOME}/cmdline-tools/bin:${ANDROID_HOME}/platform-tools
 
 RUN yes | sdkmanager --licenses
 RUN sdkmanager --update
